@@ -17,7 +17,18 @@ http.listen(3000);
 require('./routes.js')(app);
 
 io.on('connection', function(socket) {
-    console.log('a user is connected');
+    console.log('User connected');
+    socket.on('readSensor', function(cb) {
+        cb();
+    });
+
+    setTimeout(function() {
+        socket.emit('sensorValue', {
+            sensor1: 1,
+            sensor2: 0
+        });
+    }, 2000);
+
 });
 
 /**

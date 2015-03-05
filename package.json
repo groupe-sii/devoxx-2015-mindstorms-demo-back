@@ -1,0 +1,23 @@
+{
+  "name": "devoxx-2015-mindstorms-demo-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/groupe-sii/devoxx-2015-mindstorms-demo-back.git"
+  },
+  "author": "Vincent Ogloblinsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/groupe-sii/devoxx-2015-mindstorms-demo-back/issues"
+  },
+  "homepage": "https://github.com/groupe-sii/devoxx-2015-mindstorms-demo-back",
+  "private": true,
+  "devDependencies": {
+    "express": "^4.12.2"
+  }
+}

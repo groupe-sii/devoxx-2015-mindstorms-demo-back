@@ -18,6 +18,7 @@
   "homepage": "https://github.com/groupe-sii/devoxx-2015-mindstorms-demo-back",
   "private": true,
   "devDependencies": {
+    "ev3dev": "^0.9.1",
     "express": "^4.12.2"
   }
 }

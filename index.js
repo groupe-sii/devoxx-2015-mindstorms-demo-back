@@ -3,16 +3,22 @@
 /**
  * Setup
  */
-var express      = require('express'),
-    app          = express();
+var express = require('express'),
+    app     = express(),
+    http    = require('http').Server(app),
+    io      = require('socket.io')(http);
 
 /**
  * Configuration
  */
 
-app.set('port', process.env.PORT || 3000);
+http.listen(3000);
 
 require('./routes.js')(app);
+
+io.on('connection', function(socket) {
+    console.log('a user is connected');
+});
 
 /**
  * Launch

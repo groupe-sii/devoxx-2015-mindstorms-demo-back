@@ -6,13 +6,14 @@
 var express = require('express'),
     app     = express(),
     http    = require('http').Server(app),
-    io      = require('socket.io')(http);
+    io      = require('socket.io')(http),
+    port    = 3000;
 
 /**
  * Configuration
  */
 
-http.listen(3000);
+http.listen(port);
 
 require('./routes.js')(app, io);
 
@@ -20,5 +21,5 @@ require('./routes.js')(app, io);
  * Launch
  */
 app.listen(app.get('port'), function() {
-    console.log('Express server listening on port ' + app.get('port'));
+    console.log('Express server listening on port ' + port);
 });

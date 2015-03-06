@@ -14,7 +14,6 @@ module.exports = {
                             sensor1: sensor1.getValue(0),
                             sensor2: sensor2.getValue(0)
                         };
-                        console.log('readSensorsValuesInterval: ', values);
                         socket.emit('sensorValue', values);
                     }, 250);
                 },
@@ -23,13 +22,11 @@ module.exports = {
                 };
 
             socket.on('startReadingSensors', function(cb) {
-                console.log('startReadingSensors');
                 readSensorsValues();
                 cb();
             });
 
             socket.on('stopReadingSensors', function(cb) {
-                console.log('stopReadingSensors');
                 stopReadSensorsValues();
                 cb();
             });

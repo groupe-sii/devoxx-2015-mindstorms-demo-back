@@ -7,23 +7,28 @@ var ev3dev = require('ev3dev'),
 module.exports = {
     init: function(io) {
         io.on('connection', function(socket) {
-            console.log('User connected');
-            socket.on('readSensor', function(cb) {
+            var readSensorsValuesInterval = null,
+                readSensorsValues = function() {
+                    readSensorsValuesInterval = setInterval(function() {
+                        socket.emit('sensorValue', {
+                            sensor1: sensor1.getValue(0),
+                            sensor2: sensor2.getValue(0)
+                        });
+                    }, 250);
+                },
+                stopReadSensorsValues = function() {
+                    clearInterval(readSensorsValuesInterval);
+                };
+
+            socket.on('startReadingSensors', function(cb) {
+                readSensorsValues();
                 cb();
             });
 
-            setTimeout(function() {
-                socket.emit('sensorValue', {
-                    sensor1: 1,
-                    sensor2: 0
-                });
-            }, 2000);
-
-            setInterval(function() {
-                console.log('sensor1 value: ', sensor1.getValue(0));
-                console.log('sensor2 value: ', sensor2.getValue(0));
-            }, 1000)
-
+            socket.on('stopReadingSensors', function(cb) {
+                stopReadSensorsValues();
+                cb();
+            });
         });
     }
 };

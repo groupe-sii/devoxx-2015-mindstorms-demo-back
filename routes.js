@@ -2,7 +2,6 @@
 
 var motorEndpoint   = require('./motor.js'),
     sensorEndpoint  = require('./sensor.js'),
-    cors            = require('cors'),
     API_VERSION     = '/v1',
     API_ENTRYPOINT  = '/api';
 

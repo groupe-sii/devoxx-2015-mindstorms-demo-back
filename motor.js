@@ -22,8 +22,8 @@ module.exports = {
         motor.run = 1;
 
         var playWinnningSound = exec('aplay resources/winning.wav', function(error, stdout, stderr) {
-            sys.print('stdout: ' + stdout);
-            sys.print('stderr: ' + stderr);
+            console.log('stdout: ' + stdout);
+            console.log('stderr: ' + stderr);
             if (error !== null) {
                 console.log('exec error: ' + error);
             }

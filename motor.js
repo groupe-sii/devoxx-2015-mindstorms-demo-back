@@ -1,7 +1,9 @@
 'use strict';
 
-var ev3dev = require('ev3dev'),
-    motor = new ev3dev.Motor(),
+var ev3dev  = require('ev3dev'),
+    motor   = new ev3dev.Motor(),
+    sys     = require('sys'),
+    exec    = require('child_process').exec,
     motorOnDuration = 250;
 
 module.exports = {
@@ -18,6 +20,15 @@ module.exports = {
         // Power
         motor.dutyCycleSp = 50;
         motor.run = 1;
+
+        child = exec('aplay resources/winning.wav', function(error, stdout, stderr) {
+            sys.print('stdout: ' + stdout);
+            sys.print('stderr: ' + stderr);
+            if (error !== null) {
+                console.log('exec error: ' + error);
+            }
+        });
+
         setTimeout(function() {
             res.send(true);
         }, motorOnDuration);

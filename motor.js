@@ -21,7 +21,7 @@ module.exports = {
         motor.dutyCycleSp = 50;
         motor.run = 1;
 
-        child = exec('aplay resources/winning.wav', function(error, stdout, stderr) {
+        var playWinnningSound = exec('aplay resources/winning.wav', function(error, stdout, stderr) {
             sys.print('stdout: ' + stdout);
             sys.print('stderr: ' + stderr);
             if (error !== null) {

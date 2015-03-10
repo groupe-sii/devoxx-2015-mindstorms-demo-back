@@ -15,7 +15,7 @@ module.exports = {
                             sensor2: sensor2.getValue(0)
                         };
                         socket.emit('sensorValue', values);
-                    }, 250);
+                    }, 100);
                 },
                 stopReadSensorsValues = function() {
                     clearInterval(readSensorsValuesInterval);

@@ -21,18 +21,6 @@ module.exports = {
         motor.dutyCycleSp = 50;
         motor.run = 1;
 
-        try {
-            var playWinnningSound = exec('aplay resources/winning.wav', function(error, stdout, stderr) {
-                console.log('stdout: ' + stdout);
-                console.log('stderr: ' + stderr);
-                if (error !== null) {
-                    console.log('exec error: ' + error);
-                }
-            });
-        } catch (error) {
-            console.log('exec error: ' + error);
-        }
-
         setTimeout(function() {
             res.send(true);
         }, motorOnDuration);

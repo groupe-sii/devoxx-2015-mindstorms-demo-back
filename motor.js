@@ -8,7 +8,7 @@ var ev3dev  = require('ev3dev'),
 
 module.exports = {
     start: function(req, res, next) {
-        console.log('start motor');
+        //console.log('start motor');
         // Up ramp
         motor.rampUpSp = 100;
         // Down ramp

@@ -3,12 +3,13 @@
 /**
  * Setup
  */
-var express     = require('express'),
-    app         = express(),
-    http        = require('http').Server(app),
-    io          = require('socket.io')(http),
-    keypress    = require('keypress'),
-    port        = 3000;
+var express         = require('express'),
+    app             = express(),
+    http            = require('http').Server(app),
+    io              = require('socket.io')(http),
+    keypress        = require('keypress'),
+    batteryEndpoint = require('./batery.js'),
+    port            = 3000;
 
 /**
  * Configuration
@@ -24,6 +25,8 @@ require('./routes.js')(app, io);
 app.listen(app.get('port'), function() {
     console.log('Express server listening on port ' + port);
 });
+
+batteryEndpoint.logBattery();
 
 keypress(process.stdin);
 

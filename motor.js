@@ -4,7 +4,7 @@ var ev3dev  = require('ev3dev'),
     motor   = new ev3dev.Motor(),
     sys     = require('sys'),
     exec    = require('child_process').exec,
-    motorOnDuration = 270;
+    motorOnDuration = 275;
 
 module.exports = {
     start: function(req, res, next) {

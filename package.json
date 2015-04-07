@@ -19,6 +19,7 @@
   "private": true,
   "devDependencies": {
     "cors": "^2.5.3",
-    "express": "^4.12.2"
+    "express": "^4.12.2",
+    "keypress": "^0.2.1"
   }
 }

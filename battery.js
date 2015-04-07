@@ -2,7 +2,7 @@
 
 var ev3dev  = require('ev3dev'),
     battery = new ev3dev.PowerSupply(),
-    BATTERY_INTERVAL = 60000;
+    BATTERY_INTERVAL = 360000;
 
 module.exports = {
     logBattery: function() {

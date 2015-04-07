@@ -10,7 +10,7 @@ module.exports = {
 
         setInterval(function() {
             console.log('Battery: ' + battery.voltageVolts);
-            if (battery.voltageVolts > 1.5) {
+            if (battery.voltageVolts < 1.5) {
                 process.exit();
             }
         }, BATTERY_INTERVAL);

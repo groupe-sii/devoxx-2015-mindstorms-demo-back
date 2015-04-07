@@ -8,7 +8,7 @@ var express         = require('express'),
     http            = require('http').Server(app),
     io              = require('socket.io')(http),
     keypress        = require('keypress'),
-    batteryEndpoint = require('./batery.js'),
+    batteryEndpoint = require('./battery.js'),
     port            = 3000;
 
 /**

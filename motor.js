@@ -4,7 +4,7 @@ var ev3dev  = require('ev3dev'),
     motor   = new ev3dev.Motor(),
     sys     = require('sys'),
     exec    = require('child_process').exec,
-    motorOnDuration = 250;
+    motorOnDuration = 270;
 
 module.exports = {
     start: function(req, res, next) {
@@ -18,7 +18,7 @@ module.exports = {
         // Time spend
         motor.timeSp = motorOnDuration;
         // Power
-        motor.dutyCycleSp = 50;
+        motor.dutyCycleSp = 100;
         motor.run = 1;
 
         setTimeout(function() {

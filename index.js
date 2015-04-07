@@ -28,7 +28,6 @@ app.listen(app.get('port'), function() {
 keypress(process.stdin);
 
 process.stdin.on('keypress', function(ch, key) {
-    console.log('got "keypress"', key);
     if (key && key.name === 'return') {
         process.stdin.pause();
         process.exit();
